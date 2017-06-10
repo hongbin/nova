@@ -49,9 +49,14 @@ class DbDriver(base.Driver):
             raise RuntimeError(_('service is a mandatory argument for DB based'
                                  ' ServiceGroup driver'))
         report_interval = service.report_interval
-        if report_interval:
-            service.tg.add_timer(report_interval, self._report_state,
-                                 api.INITIAL_REPORTING_DELAY, service)
+        #if report_interval:
+        #    #service.tg.add_timer(report_interval, self._report_state,
+        #    #                     api.INITIAL_REPORTING_DELAY, service)
+        #    #if service.binary == "nova-consoleauth":
+        #    #    print("report_interval: " + repr(report_interval))
+        #    #    service.tg.add_timer(report_interval, self._report_state,
+        #    #                         api.INITIAL_REPORTING_DELAY, service)
+                
 
     def is_up(self, service_ref):
         """Moved from nova.utils

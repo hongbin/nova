@@ -6371,6 +6371,7 @@ def task_log_begin_task(context, task_name, period_beginning, period_ending,
         task.task_items = task_items
     try:
         task.save(context.session)
+        #pass
     except db_exc.DBDuplicateEntry:
         raise exception.TaskAlreadyRunning(task_name=task_name, host=host)
 

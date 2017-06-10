@@ -5876,8 +5876,8 @@ class ComputeManager(manager.Manager):
                     # Save the first one we find so we don't
                     # have to get it again
                     instance = inst
-                else:
-                    instance_uuids.append(inst['uuid'])
+
+                instance_uuids.append(inst['uuid'])
 
             self._instance_uuids_to_heal = instance_uuids
         else:
@@ -6092,6 +6092,7 @@ class ComputeManager(manager.Manager):
         if objects.TaskLog.get(context, 'instance_usage_audit', begin, end,
                                self.host):
             return
+            #pass
 
         instances = objects.InstanceList.get_active_by_window_joined(
             context, begin, end, host=self.host,
